@@ -21,13 +21,14 @@ player_2_turn = "Player_2 is [O] colored YELLOW\n\n".
 
 messages = [player_1_turn, player_2_turn]
 
+puts "Pick the space you want by typing the".colorize(:color => :light_red)
+puts "(Number) and hitting the [ENTER] Key\n".colorize(:color => :light_red)
+
 while game == "true"
-  puts "Pick the space you want by typing the".colorize(:color => :light_red)
-  puts "(Number) and hitting the [ENTER] Key\n".colorize(:color => :light_red)
 
   players.each_with_index do |choice, index|
     board.show_board
-        
+    puts messages[index]
     space_check = false
     while space_check == false
       space = gets.chomp
