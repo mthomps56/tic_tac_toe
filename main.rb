@@ -42,11 +42,13 @@ while game == "true"
         board.update_board(players[index], space)
         space_check = true
       end
+      board.winning_rows.each do |key|
+        puts "This is the outer enumerator: #{key} "
+        key.each_with_index do |winner_key, winner_value|
+          puts "#{winner_key} is winner_key. #{winner_value} is winner_value"
+          puts "player_[#{index + 1}]:  #{players[index].grid_spaces.spaces}"
+        end
+      end
     end
-    puts players[index]
-    if players[index].grid_spaces.spaces == 1
-
-    end
-
   end
 end
