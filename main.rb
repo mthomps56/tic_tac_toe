@@ -43,6 +43,10 @@ while game == "true"
         space_check = true
       end
     end
+    puts players[index]
+    if players[index].grid_spaces.spaces == 1
+
+    end
+
   end
-  game_check = "false"
 end
