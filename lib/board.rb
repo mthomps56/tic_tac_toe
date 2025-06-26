@@ -23,18 +23,14 @@ class Board
   def show_board
     brackets = ["[".colorize(:color => :light_green),
                 "]".colorize(:color => :light_green)]
-    player_symbols = [players[0].player_symbol.colorize(:color => :grey),
-                      players[1].player_symbol.
-                      colorize(:color => :light_yellow)]
 
     board.each do |row|
       row.each_with_index do |slot, index|
-        
         case index
         when 2 || 5 || 8
-           # puts brackets[0] + o + brackets[1]
+          puts slot
         else
-           # print brackets[0] + o + brackets[1]
+          print slot
         end
       end
     end
@@ -42,6 +38,8 @@ class Board
 
 
   def extract_slot(slot)
+    # Takes the number out of the string '[1]', '[2]', '[3]', etc and 
+    # replaces it with the player symbol: 'X' or 'O' to make '[x]' or '[O]'
     slot_number = slot[1]
     slot_number
   end
@@ -55,7 +53,7 @@ class Board
         if slot.to_i == current_space
           self.board[row_index][slot_index] = 
             "[".colorize(:color => :light_green) +
-            player.player_symbol.colorize(:color => :light_blue) +
+            player.player_symbol +
             "]".colorize(:color => :light_green)
         end
       end

@@ -27,6 +27,7 @@ puts "(Number) and hitting the [ENTER] Key\n".colorize(:color => :light_red)
 
 while game == "true"
   players.each_with_index do |choice, index|
+    puts choice
     board.show_board
     puts messages[index]
     space_check = false
@@ -38,6 +39,7 @@ while game == "true"
           colorize(:color => :red)
       else
         players[index].take_space(space)
+        board.update_board(players[index], space)
         space_check = true
       end
     end
