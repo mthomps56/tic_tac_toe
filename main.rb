@@ -1,3 +1,4 @@
+require 'pry-byebug'
 require 'colorize'
 require_relative 'lib/player'
 require_relative 'lib/board'
@@ -15,7 +16,6 @@ messages = [player_1_turn, player_2_turn]
 # True until the game has a winner, or a cat's game.
 game = "true"
 
-
 puts "\n"
 puts "Welcome to Tic Tac Toe!\n\n".colorize(:color => :light_red)
 puts = "Player_1 X] colored ORANGE".colorize(:color => :yellow)
@@ -27,7 +27,6 @@ puts "(Number) and hitting the [ENTER] Key\n".colorize(:color => :light_red)
 
 while game == "true"
   players.each_with_index do |choice, index|
-    puts choice
     board.show_board
     puts messages[index]
     space_check = false
@@ -42,13 +41,8 @@ while game == "true"
         board.update_board(players[index], space)
         space_check = true
       end
-      board.winning_rows.each do |key|
-        puts "This is the outer enumerator: #{key} "
-        key.each_with_index do |winner_key, winner_value|
-          puts "#{winner_key} is winner_key. #{winner_value} is winner_value"
-          puts "player_[#{index + 1}]:  #{players[index].grid_spaces.spaces}"
-        end
-      end
     end
+    puts players[index].grid_spaces.spaces 
+    binding.pry
   end
 end
