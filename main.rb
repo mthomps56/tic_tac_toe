@@ -1,4 +1,4 @@
-require 'pry-byebug'
+#require 'pry-byebug'
 require 'colorize'
 require_relative 'lib/player'
 require_relative 'lib/board'
@@ -21,7 +21,6 @@ puts "Welcome to Tic Tac Toe!\n\n".colorize(:color => :light_red)
 puts = "Player_1 X] colored ORANGE".colorize(:color => :yellow)
 puts = "Player_2 is [O] colored YELLOW\n\n".colorize(:color => :light_yellow)
 
-
 puts "Pick the space you want by typing the".colorize(:color => :light_red)
 puts "(Number) and hitting the [ENTER] Key\n".colorize(:color => :light_red)
 
@@ -42,7 +41,6 @@ while game == "true"
         space_check = true
       end
     end
-    puts players[index].grid_spaces.spaces 
-    binding.pry
+#    binding.pry
   end
 end
